@@ -292,8 +292,8 @@ int main(int platformArgc, char* platformArgv[]) {
 		newfile.open(inputFilePath,std::ios::in);
 		string tp;
 		getline(newfile, tp);
-		//logging::log("opened the file?");
-		//logging::log(tp.c_str());
+		logging::info("opened the file?");
+		logging::info(tp.c_str());
 		newfile.close();
 		printf("success???\n");
 		return 0;
