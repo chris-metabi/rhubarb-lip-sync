@@ -250,6 +250,7 @@ int main(int platformArgc, char* platformArgv[]) {
 		logging::debugFormat("Command line: {}",
 			join(args | transformed([](string arg) { return fmt::format("\"{}\"", arg); }), " "));
 
+/*
 		try {
 			// On progress change: Create log message
 			ProgressForwarder progressSink([](double progress) {
@@ -286,7 +287,8 @@ int main(int platformArgc, char* platformArgv[]) {
 				std::runtime_error(fmt::format("Error processing file {}.", inputFilePath.u8string()))
 			);
 		}
-
+*/
+		printf("success???\n");
 		return 0;
 	} catch (tclap::ArgException& e) {
 		// Error parsing command-line args.

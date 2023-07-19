@@ -24,12 +24,10 @@ JoiningContinuousTimeline<Shape> animate(
 	// Animate in multiple steps
 	const auto performMainAnimationSteps = [&targetShapeSet](const auto& shapeRules) {
 		JoiningContinuousTimeline<Shape> animation = animateRough(shapeRules);
-		/*
 		animation = optimizeTiming(animation);
 		animation = animatePauses(animation);
 		animation = insertTweens(animation);
 		animation = convertToTargetShapeSet(animation, targetShapeSet);
-		*/
 		return animation;
 	};
 	const JoiningContinuousTimeline<Shape> result =
