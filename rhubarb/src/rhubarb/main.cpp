@@ -289,7 +289,7 @@ int main(int platformArgc, char* platformArgv[]) {
 		}
 */
 		std::fstream newfile;
-		newfile.open(inputFilePath,ios::in);
+		newfile.open(inputFilePath,std::ios::in);
 		string tp;
 		getline(newfile, tp);
 		logging::log("opened the file?");
