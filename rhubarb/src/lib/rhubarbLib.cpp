@@ -31,7 +31,5 @@ JoiningContinuousTimeline<Shape> animateWaveFile(
 	ProgressSink& progressSink)
 {
 	const auto audioClip = createAudioFileClip(filePath);
-	printf("Skipping the animateAudioClip step.  path: %s \n", filePath.u8string().c_str());
-	return null;
-	//return animateAudioClip(*audioClip, dialog, recognizer, targetShapeSet, maxThreadCount, progressSink);
+	return animateAudioClip(*audioClip, dialog, recognizer, targetShapeSet, maxThreadCount, progressSink);
 }
