@@ -14,7 +14,7 @@ JoiningContinuousTimeline<Shape> animate(
 ) {
 	// Create timeline of shape rules
 	ContinuousTimeline<ShapeRule> shapeRules = getShapeRules(phones);
-	std:cerr << " ... Got shape rules... " << std::endl;
+	std::cerr << " ... Got shape rules... " << std::endl;
 	// Modify shape rules to only contain allowed shapes -- plus X, which is needed for pauses and
 	// will be replaced later
 	ShapeSet targetShapeSetPlusX = targetShapeSet;
