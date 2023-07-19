@@ -9,9 +9,7 @@ using std::string;
 using std::runtime_error;
 using fmt::format;
 
-std::unique_ptr<AudioClip> createAudioFileClip(path filePath) {
-	printf("Skipping the wave file load: %s\n", filePath.u8string().c_str());
-	/*
+std::unique_ptr<AudioClip> createAudioFileClip(path filePath) {	
 	try {
 		const string extension =
 			boost::algorithm::to_lower_copy(filePath.extension().u8string());
@@ -27,5 +25,5 @@ std::unique_ptr<AudioClip> createAudioFileClip(path filePath) {
 		));
 	} catch (...) {
 		std::throw_with_nested(runtime_error(format("Could not open sound file {}.", filePath.u8string())));
-	}*/
+	}
 }
