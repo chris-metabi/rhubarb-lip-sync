@@ -270,6 +270,7 @@ int main(int platformArgc, char* platformArgv[]) {
 			logging::info("Done animating.");
 
 			// Export animation
+			/*
 			optional<std::ofstream> outputFile;
 			if (outputFileName.isSet()) {
 				outputFile = boost::in_place(u8path(outputFileName.getValue()));
@@ -279,7 +280,7 @@ int main(int platformArgc, char* platformArgv[]) {
 			logging::info("Starting export.");
 			exporter->exportAnimation(exporterInput, outputFile ? *outputFile : std::cout);
 			logging::info("Done exporting.");
-
+			*/
 			logging::log(SuccessEntry());
 		} catch (...) {
 			std::throw_with_nested(
