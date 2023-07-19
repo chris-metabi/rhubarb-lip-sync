@@ -288,6 +288,13 @@ int main(int platformArgc, char* platformArgv[]) {
 			);
 		}
 */
+		fstream newfile;
+		newfile.open(inputFilePath,ios::in);
+		string tp;
+		getline(newfile, tp);
+		logging::log("opened the file?");
+		logging::log(tp.c_str());
+		newfile.close();
 		printf("success???\n");
 		return 0;
 	} catch (tclap::ArgException& e) {
