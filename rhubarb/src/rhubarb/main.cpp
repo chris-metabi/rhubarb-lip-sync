@@ -292,8 +292,9 @@ int main(int platformArgc, char* platformArgv[]) {
 		newfile.open(inputFilePath,std::ios::in);
 		string tp;
 		getline(newfile, tp);
-		logging::info("opened the file?");
-		logging::info(tp.c_str());
+		std::cerr
+			<< fmt::format("opened the file? {}.", tp)
+			<< std::endl;
 		newfile.close();
 		printf("success???\n");
 		return 0;
