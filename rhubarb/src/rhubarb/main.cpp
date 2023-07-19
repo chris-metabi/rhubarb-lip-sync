@@ -288,7 +288,7 @@ int main(int platformArgc, char* platformArgv[]) {
 			);
 		}
 */
-		fstream newfile;
+		std::fstream newfile;
 		newfile.open(inputFilePath,ios::in);
 		string tp;
 		getline(newfile, tp);
