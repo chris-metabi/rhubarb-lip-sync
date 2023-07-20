@@ -58,8 +58,8 @@ void ProgressMerger::report() {
 			weightedSum += source.weight * source.progress;
 		}
 		const double progress = weightedSum / totalWeight;
-		sink.reportProgress(progress);
+		//sink.reportProgress(progress);
 	} else {
-		sink.reportProgress(0);
+		//sink.reportProgress(0);
 	}
 }

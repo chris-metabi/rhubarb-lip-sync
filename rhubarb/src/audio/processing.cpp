@@ -35,7 +35,7 @@ void process16bitAudioClip(
 		processBuffer(buffer);
 
 		sampleCount += buffer.size();
-		progressSink.reportProgress(static_cast<double>(sampleCount) / static_cast<double>(audioClip.size()));
+		//progressSink.reportProgress(static_cast<double>(sampleCount) / static_cast<double>(audioClip.size()));
 	} while (!buffer.empty());
 }
 
