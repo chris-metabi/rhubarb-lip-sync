@@ -47,6 +47,7 @@ WaveFormatInfo getWaveFormatInfo(const path& filePath) {
 	const streamoff fileSize = file.tellg();
 	file.seekg(0);
 
+	std::cerr << " ... WaveFileReader: Filesize=" <<  fileSize << "  " << std::endl;
 	auto remaining = [&](int byteCount) {
 		const streamoff filePosition = file.tellg();
 		return byteCount <= fileSize - filePosition;
