@@ -274,7 +274,7 @@ static Timeline<Phone> utteranceToPhones(
 
 	// Get words
 	BoundedTimeline<string> words = recognizeWords(audioBuffer, decoder);
-	wordRecognitionProgressSink.reportProgress(1.0);
+	//wordRecognitionProgressSink.reportProgress(1.0);
 
 	// Log utterance text
 	string text;

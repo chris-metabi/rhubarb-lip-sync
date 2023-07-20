@@ -17,8 +17,8 @@ using std::runtime_error;
 using std::unique_ptr;
 
 JoiningBoundedTimeline<void> detectVoiceActivity(
-	const AudioClip& inputAudioClip,
-	ProgressSink& progressSink
+	const AudioClip& inputAudioClip//,
+	//ProgressSink& progressSink
 ) {
 	// Prepare audio for VAD
 	constexpr int webRtcSamplingRate = 8000;
@@ -65,7 +65,7 @@ JoiningBoundedTimeline<void> detectVoiceActivity(
 
 		time += 1_cs;
 	};
-	process16bitAudioClip(*audioClip, processBuffer, frameSize, progressSink);
+	process16bitAudioClip(*audioClip, processBuffer, frameSize);//, progressSink);
 
 	// Fill small gaps in activity
 	const centiseconds maxGap(10);

@@ -254,9 +254,9 @@ int main(int platformArgc, char* platformArgv[]) {
 
 		try {
 			// On progress change: Create log message
-			ProgressForwarder progressSink([](double progress) {
-				logging::log(ProgressEntry(progress));
-			});
+			//ProgressForwarder progressSink([](double progress) {
+			//	logging::log(ProgressEntry(progress));
+			//});
 
 			/*
 			const auto audioClip = createAudioFileClip(inputFilePath);
@@ -277,8 +277,8 @@ int main(int platformArgc, char* platformArgv[]) {
 					: boost::optional<string>(),
 				*createRecognizer(recognizerType.getValue()),
 				targetShapeSet,
-				maxThreadCount.getValue(),
-				progressSink);
+				maxThreadCount.getValue());//,
+				//progressSink);
 			logging::info("Done animating.");
 
 			// Export animation
