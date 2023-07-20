@@ -250,16 +250,16 @@ string fixPronunciation(const string& word) {
 static Timeline<Phone> utteranceToPhones(
 	const AudioClip& audioClip,
 	TimeRange utteranceTimeRange,
-	ps_decoder_t& decoder,
-	ProgressSink& utteranceProgressSink
+	ps_decoder_t& decoder//,
+	//ProgressSink& utteranceProgressSink
 ) {
 	std::cerr << " ... pocketSphinxRecognizer utteranceToPhones ... " <<  std::endl;
 
-	ProgressMerger utteranceProgressMerger(utteranceProgressSink);
-	ProgressSink& wordRecognitionProgressSink =
-		utteranceProgressMerger.addSource("word recognition (PocketSphinx recognizer)", 1.0);
-	ProgressSink& alignmentProgressSink =
-		utteranceProgressMerger.addSource("alignment (PocketSphinx recognizer)", 0.5);
+	//ProgressMerger utteranceProgressMerger(utteranceProgressSink);
+	//ProgressSink& wordRecognitionProgressSink =
+	//	utteranceProgressMerger.addSource("word recognition (PocketSphinx recognizer)", 1.0);
+	//ProgressSink& alignmentProgressSink =
+	//	utteranceProgressMerger.addSource("alignment (PocketSphinx recognizer)", 0.5);
 
 	// Pad time range to give PocketSphinx some breathing room
 	TimeRange paddedTimeRange = utteranceTimeRange;
@@ -336,9 +336,9 @@ static Timeline<Phone> utteranceToPhones(
 BoundedTimeline<Phone> PocketSphinxRecognizer::recognizePhones(
 	const AudioClip& inputAudioClip,
 	optional<std::string> dialog,
-	int maxThreadCount,
-	ProgressSink& progressSink
+	int maxThreadCount//,
+	//ProgressSink& progressSink
 ) const {
 	return ::recognizePhones(
-		inputAudioClip, dialog, &createDecoder, &utteranceToPhones, maxThreadCount, progressSink);
+		inputAudioClip, dialog, &createDecoder, &utteranceToPhones, maxThreadCount);//, progressSink);
 }

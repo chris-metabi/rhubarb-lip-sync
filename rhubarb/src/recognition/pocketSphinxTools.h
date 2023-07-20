@@ -17,8 +17,8 @@ typedef std::function<lambda_unique_ptr<ps_decoder_t>(
 typedef std::function<Timeline<Phone>(
 	const AudioClip& audioClip,
 	TimeRange utteranceTimeRange,
-	ps_decoder_t& decoder,
-	ProgressSink& utteranceProgressSink
+	ps_decoder_t& decoder//,
+	//ProgressSink& utteranceProgressSink
 )> utteranceToPhonesFunction;
 
 BoundedTimeline<Phone> recognizePhones(
@@ -26,8 +26,8 @@ BoundedTimeline<Phone> recognizePhones(
 	boost::optional<std::string> dialog,
 	decoderFactory createDecoder,
 	utteranceToPhonesFunction utteranceToPhones,
-	int maxThreadCount,
-	ProgressSink& progressSink
+	int maxThreadCount//,
+	//ProgressSink& progressSink
 );
 
 constexpr int sphinxSampleRate = 16000;

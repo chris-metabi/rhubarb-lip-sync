@@ -14,8 +14,8 @@ inline int16_t floatSampleToInt16(float sample) {
 void process16bitAudioClip(
 	const AudioClip& audioClip,
 	const function<void(const vector<int16_t>&)>& processBuffer,
-	size_t bufferCapacity,
-	ProgressSink& progressSink
+	size_t bufferCapacity//,
+	//ProgressSink& progressSink
 ) {
 	// Process entire sound stream
 	vector<int16_t> buffer;
@@ -41,11 +41,11 @@ void process16bitAudioClip(
 
 void process16bitAudioClip(
 	const AudioClip& audioClip,
-	const function<void(const vector<int16_t>&)>& processBuffer,
-	ProgressSink& progressSink
+	const function<void(const vector<int16_t>&)>& processBuffer//,
+	//ProgressSink& progressSink
 ) {
 	const size_t capacity = 1600; // 0.1 second capacity
-	process16bitAudioClip(audioClip, processBuffer, capacity, progressSink);
+	process16bitAudioClip(audioClip, processBuffer, capacity);//, progressSink);
 }
 
 vector<int16_t> copyTo16bitBuffer(const AudioClip& audioClip) {

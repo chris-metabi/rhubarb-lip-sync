@@ -13,13 +13,13 @@ JoiningContinuousTimeline<Shape> animateAudioClip(
 	const boost::optional<std::string>& dialog,
 	const Recognizer& recognizer,
 	const ShapeSet& targetShapeSet,
-	int maxThreadCount,
-	ProgressSink& progressSink);
+	int maxThreadCount);//,
+	//ProgressSink& progressSink);
 
 JoiningContinuousTimeline<Shape> animateWaveFile(
 	std::filesystem::path filePath,
 	const boost::optional<std::string>& dialog,
 	const Recognizer& recognizer,
 	const ShapeSet& targetShapeSet,
-	int maxThreadCount,
-	ProgressSink& progressSink);
+	int maxThreadCount);//,
+	//ProgressSink& progressSink);

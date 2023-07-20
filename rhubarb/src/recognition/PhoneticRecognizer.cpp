@@ -55,8 +55,8 @@ static lambda_unique_ptr<ps_decoder_t> createDecoder(optional<std::string> dialo
 static Timeline<Phone> utteranceToPhones(
 	const AudioClip& audioClip,
 	TimeRange utteranceTimeRange,
-	ps_decoder_t& decoder,
-	ProgressSink& utteranceProgressSink
+	ps_decoder_t& decoder//,
+	//ProgressSink& utteranceProgressSink
 ) {
 	// Pad time range to give PocketSphinx some breathing room
 	TimeRange paddedTimeRange = utteranceTimeRange;
@@ -98,7 +98,7 @@ static Timeline<Phone> utteranceToPhones(
 		logTimedEvent("phone", timedPhone);
 	}
 
-	utteranceProgressSink.reportProgress(1.0);
+	//utteranceProgressSink.reportProgress(1.0);
 
 	return utterancePhones;
 }
@@ -106,8 +106,8 @@ static Timeline<Phone> utteranceToPhones(
 BoundedTimeline<Phone> PhoneticRecognizer::recognizePhones(
 	const AudioClip& inputAudioClip,
 	optional<std::string> dialog,
-	int maxThreadCount,
-	ProgressSink& progressSink
+	int maxThreadCount//,
+	//ProgressSink& progressSink
 ) const {
-	return ::recognizePhones(inputAudioClip, dialog, &createDecoder, &utteranceToPhones, maxThreadCount, progressSink);
+	return ::recognizePhones(inputAudioClip, dialog, &createDecoder, &utteranceToPhones, maxThreadCount);//, progressSink);
 }

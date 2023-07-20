@@ -87,14 +87,14 @@ BoundedTimeline<Phone> recognizePhones(
 	optional<std::string> dialog,
 	decoderFactory createDecoder,
 	utteranceToPhonesFunction utteranceToPhones,
-	int maxThreadCount,
-	ProgressSink& progressSink
+	int maxThreadCount//,
+	//ProgressSink& progressSink
 ) {
-	ProgressMerger totalProgressMerger(progressSink);
-	ProgressSink& voiceActivationProgressSink =
-		totalProgressMerger.addSource("VAD (PocketSphinx tools)", 1.0);
-	ProgressSink& dialogProgressSink =
-		totalProgressMerger.addSource("recognition (PocketSphinx tools)", 15.0);
+	//ProgressMerger totalProgressMerger(progressSink);
+	//ProgressSink& voiceActivationProgressSink =
+	//	totalProgressMerger.addSource("VAD (PocketSphinx tools)", 1.0);
+	//ProgressSink& dialogProgressSink =
+	//	totalProgressMerger.addSource("recognition (PocketSphinx tools)", 15.0);
 
 	// Make sure audio stream has no DC offset
 	const unique_ptr<AudioClip> audioClip = inputAudioClip.clone() | removeDcOffset();
@@ -102,7 +102,7 @@ BoundedTimeline<Phone> recognizePhones(
 	// Split audio into utterances
 	JoiningBoundedTimeline<void> utterances;
 	try {
-		utterances = detectVoiceActivity(*audioClip, voiceActivationProgressSink);
+		utterances = detectVoiceActivity(*audioClip);//, voiceActivationProgressSink);
 	} catch (...) {
 		std::throw_with_nested(runtime_error("Error detecting segments of speech."));
 	}
@@ -121,8 +121,8 @@ BoundedTimeline<Phone> recognizePhones(
 		Timeline<Phone> utterancePhones = utteranceToPhones(
 			*audioClip,
 			timedUtterance.getTimeRange(),
-			*decoder,
-			utteranceProgressSink
+			*decoder//,
+			//utteranceProgressSink
 		);
 
 		// Copy phones to result timeline
