@@ -258,16 +258,17 @@ int main(int platformArgc, char* platformArgv[]) {
 			//	logging::log(ProgressEntry(progress));
 			//});
 
-			/*
+			
 			const auto audioClip = createAudioFileClip(inputFilePath);
 			std::cerr << " ... Got audio clip... size=" <<  audioClip->size() <<  std::endl;
+			
 			const Recognizer& recognizer = *createRecognizer(recognizerType.getValue());
 			std::cerr << " ... recognizer? ... " <<  std::endl;
-			const BoundedTimeline<Phone> phones = recognizer.recognizePhones(*audioClip, boost::optional<string>(), 1, progressSink);
 
+			const BoundedTimeline<Phone> phones = recognizer.recognizePhones(*audioClip, boost::optional<string>(), 1);//, progressSink);
 			std::cerr << " ... Phones? ... range?" <<  std::endl;
-			*/
 			
+			/*
 			// Animate the recording
 			logging::info("Starting animation.");
 			JoiningContinuousTimeline<Shape> animation = animateWaveFile(
@@ -292,7 +293,7 @@ int main(int platformArgc, char* platformArgv[]) {
 			exporter->exportAnimation(exporterInput, outputFile ? *outputFile : std::cout);
 			logging::info("Done exporting.");
 			logging::log(SuccessEntry());
-			
+			*/
 		} catch (...) {
 			std::throw_with_nested(
 				std::runtime_error(fmt::format("Error processing file {}.", inputFilePath.u8string()))
