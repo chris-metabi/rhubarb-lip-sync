@@ -95,13 +95,12 @@ void runParallel(
 	std::vector<std::function<void()>> functions;
 	int elementIndex = 0;
 	for (auto& element : collection) {
-		auto& elementProgressSink = progressMerger.addSource(
-			fmt::format("runParallel ({}) #{}", description, elementIndex),
-			getElementProgressWeight(element)
-		);
-		functions.push_back([&]() { processElement(element, elementProgressSink); });
-
-		++elementIndex;
+	//	auto& elementProgressSink = progressMerger.addSource(
+	//		fmt::format("runParallel ({}) #{}", description, elementIndex),
+	//		getElementProgressWeight(element)
+	//	);
+		functions.push_back([&]() { processElement(element); });//, elementProgressSink); });
+	  ++elementIndex;
 	}
 
 	// Run wrapper function
