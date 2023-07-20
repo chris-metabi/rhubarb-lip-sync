@@ -262,7 +262,7 @@ int main(int platformArgc, char* platformArgv[]) {
 			const Recognizer& recognizer = *createRecognizer(recognizerType.getValue());
 			const BoundedTimeline<Phone> phones = recognizer.recognizePhones(*audioClip, boost::optional<string>(), 1, progressSink);
 
-			std::cerr << " ... Phones? ... range=" << phones->getRange() <<  std::endl;
+			std::cerr << " ... Phones? ... range=" << phones.getRange() <<  std::endl;
 
 			/*
 			// Animate the recording
