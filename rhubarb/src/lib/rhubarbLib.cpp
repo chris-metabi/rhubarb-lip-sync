@@ -27,7 +27,7 @@ JoiningContinuousTimeline<Shape> animateWaveFile(
 	const optional<string>& dialog,
 	const Recognizer& recognizer,
 	const ShapeSet& targetShapeSet,
-	int maxThreadCount);//,
+	int maxThreadCount)//,
 	//ProgressSink& progressSink)
 {
 	const auto audioClip = createAudioFileClip(filePath);
