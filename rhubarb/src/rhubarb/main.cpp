@@ -259,10 +259,10 @@ int main(int platformArgc, char* platformArgv[]) {
 			//});
 
 			
-			const auto audioClip = createAudioFileClip(inputFilePath);
-			std::cerr << " ... Got audio clip... size=" <<  audioClip->size() <<  std::endl;
+			//const auto audioClip = createAudioFileClip(inputFilePath);
+			//std::cerr << " ... Got audio clip... size=" <<  audioClip->size() <<  std::endl;
 
-			const Recognizer& recognizer = *createRecognizer(recognizerType.getValue());
+			//const Recognizer& recognizer = *createRecognizer(recognizerType.getValue());
 			std::cerr << " ... recognizer? ... " <<  std::endl;
 
 			//const BoundedTimeline<Phone> phones = recognizer.recognizePhones(*audioClip, boost::optional<string>(), 1);//, progressSink);
