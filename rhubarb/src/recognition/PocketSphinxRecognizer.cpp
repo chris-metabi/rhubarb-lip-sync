@@ -253,6 +253,8 @@ static Timeline<Phone> utteranceToPhones(
 	ps_decoder_t& decoder,
 	ProgressSink& utteranceProgressSink
 ) {
+	std::cerr << " ... pocketSphinxRecognizer utteranceToPhones ... " <<  std::endl;
+
 	ProgressMerger utteranceProgressMerger(utteranceProgressSink);
 	ProgressSink& wordRecognitionProgressSink =
 		utteranceProgressMerger.addSource("word recognition (PocketSphinx recognizer)", 1.0);
