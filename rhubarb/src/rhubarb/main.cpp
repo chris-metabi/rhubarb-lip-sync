@@ -265,8 +265,8 @@ int main(int platformArgc, char* platformArgv[]) {
 			const Recognizer& recognizer = *createRecognizer(recognizerType.getValue());
 			std::cerr << " ... recognizer? ... " << recognizerType.getValue() << std::endl;
 
-			const BoundedTimeline<Phone> phones = recognizer.recognizePhones(*audioClip, boost::optional<string>(), 1);//, progressSink);
-			std::cerr << " ... Phones? ... range?" <<  std::endl;
+			//const BoundedTimeline<Phone> phones = recognizer.recognizePhones(*audioClip, boost::optional<string>(), 1);//, progressSink);
+			std::cerr << " ... Phones? ... maxThreadCount?" <<  maxThreadCount.getValue() <<  std::endl;
 			
 			/*
 			// Animate the recording
