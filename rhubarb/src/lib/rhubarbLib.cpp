@@ -13,7 +13,7 @@ JoiningContinuousTimeline<Shape> animateAudioClip(
 	const optional<string>& dialog,
 	const Recognizer& recognizer,
 	const ShapeSet& targetShapeSet,
-	int maxThreadCount);//,
+	int maxThreadCount)//,
 	//ProgressSink& progressSink)
 {
 	const BoundedTimeline<Phone> phones =
