@@ -115,7 +115,7 @@ BoundedTimeline<Phone> recognizePhones(
 
 	BoundedTimeline<Phone> phones(audioClip->getTruncatedRange());
 	std::mutex resultMutex;
-	const auto processUtterance = [&](Timed<void> timedUtterance, ProgressSink& utteranceProgressSink) {
+	const auto processUtterance = [&](Timed<void> timedUtterance) { //}, ProgressSink& utteranceProgressSink) {
 		// Detect phones for utterance
 		const auto decoder = decoderPool.acquire();
 		Timeline<Phone> utterancePhones = utteranceToPhones(
@@ -157,7 +157,7 @@ BoundedTimeline<Phone> recognizePhones(
 			processUtterance,
 			utterances,
 			threadCount,
-			dialogProgressSink,
+			//dialogProgressSink,
 			getUtteranceProgressWeight
 		);
 		logging::debug("Speech recognition -- end");

@@ -83,15 +83,15 @@ void runParallel(
 template<typename TCollection>
 void runParallel(
 	const std::string& description,
-	std::function<void(typename TCollection::reference, ProgressSink&)> processElement,
+	std::function<void(typename TCollection::reference)> processElement,  //...reference, ProgressSink&
 	TCollection& collection,
 	int maxThreadCount,
-	ProgressSink& progressSink,
+	//ProgressSink& progressSink,
 	std::function<double(typename TCollection::reference)> getElementProgressWeight =
 		[](typename TCollection::reference) { return 1.0; })
 {
 	// Create a collection of wrapper functions that take care of progress handling
-	ProgressMerger progressMerger(progressSink);
+	//ProgressMerger progressMerger(progressSink);
 	std::vector<std::function<void()>> functions;
 	int elementIndex = 0;
 	for (auto& element : collection) {
