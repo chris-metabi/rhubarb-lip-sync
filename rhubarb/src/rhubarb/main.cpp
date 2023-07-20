@@ -30,6 +30,8 @@
 #include "recognition/PocketSphinxRecognizer.h"
 #include "recognition/PhoneticRecognizer.h"
 
+#include "audio/audioFileReading.h" //TEMP TESTING
+
 using std::exception;
 using std::string;
 using std::string;
@@ -255,7 +257,8 @@ int main(int platformArgc, char* platformArgv[]) {
 			ProgressForwarder progressSink([](double progress) {
 				logging::log(ProgressEntry(progress));
 			});
-
+			const auto audioClip = createAudioFileClip(inputFilePath);
+			/*
 			// Animate the recording
 			logging::info("Starting animation.");
 			JoiningContinuousTimeline<Shape> animation = animateWaveFile(
@@ -280,6 +283,7 @@ int main(int platformArgc, char* platformArgv[]) {
 			exporter->exportAnimation(exporterInput, outputFile ? *outputFile : std::cout);
 			logging::info("Done exporting.");
 			logging::log(SuccessEntry());
+			*/
 		} catch (...) {
 			std::throw_with_nested(
 				std::runtime_error(fmt::format("Error processing file {}.", inputFilePath.u8string()))
