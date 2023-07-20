@@ -309,7 +309,7 @@ static Timeline<Phone> utteranceToPhones(
 #endif
 	Timeline<Phone> utterancePhones = getPhoneAlignment(wordIds, audioBuffer, decoder)
 		.value_or(ContinuousTimeline<Phone>(clipSegment->getTruncatedRange(), Phone::Noise));
-	alignmentProgressSink.reportProgress(1.0);
+	//alignmentProgressSink.reportProgress(1.0);
 	utterancePhones.shift(paddedTimeRange.getStart());
 
 	// Log raw phones
