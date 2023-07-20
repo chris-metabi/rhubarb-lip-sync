@@ -258,7 +258,7 @@ int main(int platformArgc, char* platformArgv[]) {
 				logging::log(ProgressEntry(progress));
 			});
 			const auto audioClip = createAudioFileClip(inputFilePath);
-			std::cerr << " ... Got audio clip... size=" <<  audioClip.size() <<  std::endl;
+			std::cerr << " ... Got audio clip... size=" <<  audioClip->size() <<  std::endl;
 			/*
 			// Animate the recording
 			logging::info("Starting animation.");
