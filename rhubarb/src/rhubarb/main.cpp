@@ -263,7 +263,7 @@ int main(int platformArgc, char* platformArgv[]) {
 			std::cerr << " ... Got audio clip... size=" <<  audioClip->size() <<  std::endl;
 
 			//const Recognizer& recognizer = *createRecognizer(recognizerType.getValue());
-			std::cerr << " ... recognizer? ... " <<  std::endl;
+			std::cerr << " ... recognizer? ... " << recognizerType.getValue() << std::endl;
 
 			//const BoundedTimeline<Phone> phones = recognizer.recognizePhones(*audioClip, boost::optional<string>(), 1);//, progressSink);
 			std::cerr << " ... Phones? ... range?" <<  std::endl;
