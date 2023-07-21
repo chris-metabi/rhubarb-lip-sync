@@ -278,8 +278,7 @@ int main(int platformArgc, char* platformArgv[]) {
 					: boost::optional<string>(),
 				*createRecognizer(recognizerType.getValue()),
 				targetShapeSet,
-				1);
-				//maxThreadCount.getValue());//,
+				maxThreadCount.getValue());//,
 				//progressSink);
 			logging::info("Done animating.");
 
