@@ -125,15 +125,13 @@ int loadMP3() {
 	size_t buffer_size;
 	size_t done;
 	int err;
-	if(err != MPG123_OK || (mh = mpg123_new(NULL, &err)) == NULL)
+	if (mh = mpg123_new(NULL, &err) == NULL)
 	{
 		fprintf(stderr, "Basic setup goes wrong: %s", mpg123_plain_strerror(err));
 		return -1;
 	}
 
 	return 0;
-
-
 }
 
 int main(int platformArgc, char* platformArgv[]) {
