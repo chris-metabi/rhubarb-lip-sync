@@ -118,14 +118,39 @@ ShapeSet getTargetShapeSet(const string& extendedShapesString) {
 	return result;
 }
 
+int loadMP3() {
+	mpg123_handle *mh;
+
+	unsigned char *buffer;
+	size_t buffer_size;
+	size_t done;
+	int err;
+
+	// Initialize mpg123 library
+	mpg123_init();
+
+	// Create a new mpg123 handle
+	mh = mpg123_new(NULL, &err);
+	if (mh == NULL) {
+			printf("Error: Failed to initialize mpg123 handle.\n");
+			return 1;
+	}
+
+	return 0;
+
+
+}
+
 int main(int platformArgc, char* platformArgv[]) {
 	// Set up default logging so early errors are printed to stdout
 	const logging::Level defaultMinStderrLevel = logging::Level::Error;
 	shared_ptr<logging::Sink> defaultSink = make_shared<NiceStderrSink>(defaultMinStderrLevel);
 	logging::addSink(defaultSink);
 
+
 	//TESTING: can we instantiate a component of mpg123???
-	mpg123_handle *mh;
+	int m = loadMP3();
+	std::cerr << " ... mpg123 loaded? ... m = " << m << std::endl;
 
 	// Make sure the console uses UTF-8 on all platforms including Windows
 	useUtf8ForConsole();
