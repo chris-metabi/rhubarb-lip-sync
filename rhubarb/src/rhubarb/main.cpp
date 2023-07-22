@@ -128,7 +128,6 @@ int loadMP3() {
 	if(err != MPG123_OK || (mh = mpg123_new(NULL, &err)) == NULL)
 	{
 		fprintf(stderr, "Basic setup goes wrong: %s", mpg123_plain_strerror(err));
-		cleanup(mh, ao);
 		return -1;
 	}
 
