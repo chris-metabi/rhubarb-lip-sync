@@ -31,6 +31,7 @@
 #include "recognition/PhoneticRecognizer.h"
 
 #include "audio/audioFileReading.h" //TEMP TESTING
+#include <mpg123.h>
 
 using std::exception;
 using std::string;
@@ -122,6 +123,9 @@ int main(int platformArgc, char* platformArgv[]) {
 	const logging::Level defaultMinStderrLevel = logging::Level::Error;
 	shared_ptr<logging::Sink> defaultSink = make_shared<NiceStderrSink>(defaultMinStderrLevel);
 	logging::addSink(defaultSink);
+
+	//TESTING: can we instantiate a component of mpg123???
+	mpg123_handle *mh;
 
 	// Make sure the console uses UTF-8 on all platforms including Windows
 	useUtf8ForConsole();
