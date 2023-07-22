@@ -126,15 +126,6 @@ int loadMP3() {
 	size_t done;
 	int err;
 
-	// Initialize mpg123 library
-	mpg123_init();
-
-	// Create a new mpg123 handle
-	mh = mpg123_new(NULL, &err);
-	if (mh == NULL) {
-			printf("Error: Failed to initialize mpg123 handle.\n");
-			return 1;
-	}
 
 	return 0;
 
@@ -150,7 +141,7 @@ int main(int platformArgc, char* platformArgv[]) {
 
 	//TESTING: can we instantiate a component of mpg123???
 	int m = loadMP3();
-	std::cerr << " ... mpg123 loaded? ... m = " << m << std::endl;
+	std::cerr << " ... mpg123 loaded? ... version = " << MPG123_API_VERSION << std::endl;
 
 	// Make sure the console uses UTF-8 on all platforms including Windows
 	useUtf8ForConsole();
